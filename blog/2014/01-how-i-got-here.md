@@ -1,4 +1,5 @@
-== How I got here ==
+How I got here
+==============
 
 2014-05-17
 
