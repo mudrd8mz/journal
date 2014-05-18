@@ -26,7 +26,7 @@ use. Charts can be found in the
 I knew I would be coming from east so I picked TIMBA as the [initial approach
 fix](http://en.wikipedia.org/wiki/Initial_approach_fix). The next step was to
 plan arriving to TIMBA. This is when
-[STAR](http://en.wikipedia.org/wiki/Standard_Terminal_Arrival_Route_(STAR))
+[STAR](http://en.wikipedia.org/wiki/Standard_Terminal_Arrival_Route_(STAR\))
 charts become useful. I printed out "STAR VIA TIMBA (NORTH AND EAST)"
 and picked the TIMBA TWO FOXTROT (TIMBA 2F) arrival route. So I realized I need
 to get to the LYD VOR/DME station.
@@ -69,8 +69,8 @@ It was supposed to be quite a nice training session combining NDB navigation,
 VOR navigation, flying the holding pattern and ILS approach. Unfortunately,
 there was quite a strong side wind today and the visibility was not that good
 with clouds at 1000. The ATIS in Calais reported wind 170° at 19 knots and it
-was 170° at 28 knots in Gatwick. So tracking the beam was quite challenging
-- beside the fact that I was just using my new trimming wheel for the first
+was 170° at 28 knots in Gatwick. So tracking the beam was quite challenging,
+beside the fact that I was just using my new trimming wheel for the first
 time. Anyway, I landed after an hour or so of the flight - and that is what
 counts.
 
