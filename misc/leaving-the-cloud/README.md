@@ -1,4 +1,5 @@
-= Leaving the cloud =
+Leaving the cloud
+=================
 
 Couple of notes on an ongoing project of setting up my networking
 environment on own server.
