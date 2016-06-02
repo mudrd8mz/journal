@@ -1,0 +1,9 @@
+DEPENDENCIES
+============
+
+Gentoo packages to have emerged before building Flightgear.
+
+* media-libs/openal
+* dev-games/openscenegraph
+* media-libs/plib
+* media-libs/freeglut
