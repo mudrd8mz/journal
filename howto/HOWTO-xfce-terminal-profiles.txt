@@ -1,0 +1,28 @@
+## Profiles in Xfce4 Terminal emualator ##
+
+Xfce4 terminal does not support profiles natively. I needed to have different
+appearance (font size) on external monitor (due to different resolution).
+
+(1) Copy the existing terminalrc
+
+    # mkdir -p ~/.config-monitor/xfce4/terminal
+    # cp ~/.config/xfce4/terminal/terminalrc ~/.config-monitor/xfce4/terminal/
+
+(2) Create a wrapper `~/bin/xfce4-terminal` and set it as the preferred terminal
+emulator in Xfce:
+
+    #!/bin/bash
+
+    if [[ $DISPLAY == :0.1 ]]; then
+        XDG_CONFIG_HOME=~/.config-monitor /usr/bin/xfce4-terminal $@
+    else
+        /usr/bin/xfce4-terminal $@
+    fi
+
+(3) Add the following to `~/.bashrc` to reset the XDG_CONFIG_HOME value back in
+the shell launched inside the terminal (I assume the terminal has to have "Run
+command as login shell" enabled, I did not test without it).
+
+    export XDG_CONFIG_HOME=~/.config
+
+Yay!
