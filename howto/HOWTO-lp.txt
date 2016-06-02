@@ -1,0 +1,1 @@
+lp -o page-top=85 -o page-bottom=85 -o page-left=85 -o page-right=85

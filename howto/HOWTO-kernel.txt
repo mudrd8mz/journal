@@ -1,0 +1,30 @@
+Protecting kernel sources
+=========================
+
+If newer kernel sources has been merged and you run --depclean before switching to the newer sources, the current sources will be
+removed. But if you want to stay with the current sources, this removal is not wanted, because you may need the sources e.g. for
+updating external kernel modules. It's therefore good practice to add the specific kernel version to your world file to protect it
+from --depclean operations
+
+    # emerge --ask --noreplace gentoo-sources:3.3.8
+
+Note the slot notation, using a colon instead of a dash. Every kernel version is its own slot.
+
+
+Compiling a new kernel
+======================
+
+$ eselect kernel
+$ make oldconfig
+$ make prepare
+$ make modules_prepare
+$ emerge -av @module-rebuild
+$ make -j5
+$ make modules_install
+$ mount /boot
+$ make install
+$ cp /boot/vmlinuz-{the default one} /boot/efi/boot/bootx64.efi     # fallback via UEFI stub
+$ cd /boot
+$ make
+
+Check /etc/portage/package.accept_keywords for sys-firmware/iwl7260-ucode version.

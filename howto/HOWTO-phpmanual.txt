@@ -1,0 +1,7 @@
+http://php.net/download-docs.php
+
+The manual is also available via *nix style man pages. To install and use:
+
+    Install: pear install doc.php.net/pman
+    Upgrade: pear upgrade doc.php.net/pman
+    Example usage: pman strlen

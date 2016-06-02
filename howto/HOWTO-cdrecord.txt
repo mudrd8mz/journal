@@ -1,0 +1,14 @@
+Data CD/DVD
+===========
+
+http://wiki.gentoo.org/wiki/CD/DVD/BD_Writing
+
+# cdrecord -scanbus
+# cdrecord dev=2,0,0 -v -eject -dao driveropts=burnfree test.iso
+
+Burning MP3 to audio CD
+=======================
+
+# ffmpeg -i /path/to/big.mp3 -ss 01:11:07 -to 01:52:54 -acodec copy /path/to/small.mp3
+# ffmpeg -i /path/to/file.mp3 -acodec pcm_s16le -ar 44100 -ac 2 -f wav /path/to/file.wav
+# cdrecord dev=2,0,0 -v -dao -audio -pad driveropts=burnfree *.wav

@@ -1,0 +1,25 @@
+In wpa_cli:
+
+    > scan
+    OK
+    <2>CTRL-EVENT-SCAN-RESULTS
+    > scan_results
+
+Add a new network (outputs the network id):
+
+    > add_network
+    7
+
+Setting PSK to WEP2 network:
+
+    > set_network 7 ssid "WLAN-Network"
+    > set_network 7 psk "SupahSecretPassphrase"
+
+Enable it:
+
+    > enable_network 7
+
+Save to config file:
+
+    > save_config
+    OK

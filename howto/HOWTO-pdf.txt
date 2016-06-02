@@ -1,0 +1,2 @@
+
+    $ convert a.png b.png -compress jpeg -resize 1240x1753 -extent 1240x1753 -gravity center -units PixelsPerInch -density 150x150 multipage.pdf
