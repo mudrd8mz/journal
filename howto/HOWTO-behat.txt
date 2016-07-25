@@ -1,26 +1,21 @@
 Running Moodle Behat tests with Chrome
 ======================================
 
-1. Extract the Chrome driver (executable) into /opt
+1. Extract the Chrome driver (executable) into your $PATH
 
 2. Define new profile in config.php
 
-    $CFG->behat_config = array(
-        'chrome' => array(
-           'extensions' => array(
-               'Behat\MinkExtension\Extension' => array(
-                   'selenium2' => array(
-                       'browser' => 'chrome',
-                   )
-               )
-           )
-       ),
-    );
+    $CFG->behat_profiles = [
+        'default' => [
+            'browser' => 'chrome',
+            'extensions' => [
+                'Behat\MinkExtension' => [
+                    'selenium2' => [
+                        'browser' => 'chrome',
+                    ]
+                ]
+            ]
+        ]
+    ];
 
-3. Run `mdk behat`, the generated behat.yml will contain info about the new profile.
-
-4. Run Selenium with setting the path to the chromedriver:
-
-    $ /usr/bin/java -jar /home/mudrd8mz/.moodle-sdk/selenium.jar -Dwebdriver.chrome.driver=/opt/chromedriver
-
-5. Run vendor/bin/behat with `--profile chrome`
+3. Use `mdk behat` as needed.
