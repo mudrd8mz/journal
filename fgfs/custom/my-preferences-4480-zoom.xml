@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<PropertyList>
+    <sim>
+        <view n="0">
+            <config>
+                <pitch-offset-deg>-15.0</pitch-offset-deg>
+            </config>
+        </view>
+
+        <rendering>
+            <camera-group>
+                <window>
+                    <name type="string">wide</name>
+                    <host-name type="string"></host-name>
+                    <!--<width>4480</width>
+                    <height>1080</height>
+                    <decoration type="bool">false</decoration>-->
+                    <fullscreen type="bool">true</fullscreen>
+                    <overrideRedirect type="bool">true</overrideRedirect>
+                </window>
+
+                <camera>
+                    <name type="string">CenterCamera</name>
+                    <window>
+                        <name>wide</name>
+                    </window>
+                    <viewport>
+                        <x>1280</x>
+                        <y>0</y>
+                        <width>1920</width>
+                        <height>1080</height>
+                    </viewport>
+                    <view>
+                        <heading-deg type="double">0.0</heading-deg>
+                        <roll-deg type="double">0.0</roll-deg>
+                        <pitch-deg type="double">0.0</pitch-deg>
+                    </view>
+                    <physical-dimensions>
+                        <!-- The size of the projection plane: 533mm 300mm -->
+                        <width>310</width>
+                        <height>176</height>
+                        <bezel>
+                            <right>14</right>
+                            <left>14</left>
+                            <top>23</top>
+                            <bottom>23</bottom>
+                        </bezel>
+                    </physical-dimensions>
+                    <!-- Cheating, the real distance is about 800mm. But then the screen does not show what is needed to fly. By shortening this pictures get bigger but the view also gets ess realistic. -->
+                    <master-perspective>
+                        <eye-distance>600</eye-distance>
+                        <x-offset>0</x-offset>
+                        <y-offset>0</y-offset>
+                    </master-perspective>
+                </camera>
+
+                <camera>
+                    <name type="string">RightCamera</name>
+                    <window>
+                        <name>wide</name>
+                    </window>
+                    <viewport>
+                        <x>3200</x>
+                        <y>56</y>
+                        <width>1280</width>
+                        <height>1024</height>
+                    </viewport>
+                    <view>
+                        <heading-deg type="double">0</heading-deg>
+                        <roll-deg type="double">0</roll-deg>
+                        <pitch-deg type="double">0</pitch-deg>
+                    </view>
+                    <physical-dimensions>
+                        <width>340</width>
+                        <height>272</height>
+                        <bezel>
+                            <right>14</right>
+                            <left>14</left>
+                            <top>23</top>
+                            <bottom>23</bottom>
+                        </bezel>
+                    </physical-dimensions>
+                    <reference-points-perspective>
+                        <parent-camera type="string">CenterCamera</parent-camera>
+                        <parent>
+                            <point n="0">
+                                <x>169</x>
+                                <y>88</y>
+                            </point>
+                            <point n="1">
+                                <x>169</x>
+                                <y>-88</y>
+                            </point>
+                        </parent>
+                        <this>
+                            <point n="0">
+                                <x>-184</x>
+                                <y>88</y>
+                            </point>
+                            <point n="1">
+                                <x>-184</x>
+                                <y>-88</y>
+                            </point>
+                        </this>
+                    </reference-points-perspective>
+                </camera>
+
+                <camera>
+                    <name type="string">LeftCamera</name>
+                    <window>
+                        <name>wide</name>
+                    </window>
+                    <viewport>
+                        <x>0</x>
+                        <y>56</y>
+                        <width>1280</width>
+                        <height>1024</height>
+                    </viewport>
+                    <view>
+                        <heading-deg type="double">0</heading-deg>
+                        <roll-deg type="double">0</roll-deg>
+                        <pitch-deg type="double">0</pitch-deg>
+                    </view>
+                    <physical-dimensions>
+                        <width>340</width>
+                        <height>272</height>
+                        <bezel>
+                            <right>14</right>
+                            <left>14</left>
+                            <top>23</top>
+                            <bottom>23</bottom>
+                        </bezel>
+                    </physical-dimensions>
+                    <reference-points-perspective>
+                        <parent-camera type="string">CenterCamera</parent-camera>
+                        <parent>
+                            <point n="0">
+                                <x>-169</x>
+                                <y>88</y>
+                            </point>
+                            <point n="1">
+                                <x>-169</x>
+                                <y>-88</y>
+                            </point>
+                        </parent>
+                        <this>
+                            <point n="0">
+                                <x>184</x>
+                                <y>88</y>
+                            </point>
+                            <point n="1">
+                                <x>184</x>
+                                <y>-88</y>
+                            </point>
+                        </this>
+                    </reference-points-perspective>
+                </camera>
+
+                <gui>
+                    <window>
+                        <name type="string">wide</name>
+                    </window>
+                </gui>
+            </camera-group>
+        </rendering>
+    </sim>
+</PropertyList>
