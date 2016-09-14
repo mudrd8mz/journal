@@ -1,0 +1,12 @@
+diff --git a/joysticks.xml b/joysticks.xml
+index 0062f800ef..0d583bdeba 100644
+--- a/joysticks.xml
++++ b/joysticks.xml
+@@ -15,6 +15,7 @@
+ -->
+ 
+ <PropertyList>
++    <js-named include="Input/Joysticks/customized/Pro-Flight-Yoke-8mz.xml"/>
+ <!--
+ 	<js-named include="Input/Joysticks/Local/X45-modified.xml"/>
+ 
