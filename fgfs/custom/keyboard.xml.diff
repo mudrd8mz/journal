@@ -1,0 +1,205 @@
+diff --git a/keyboard.xml b/keyboard.xml
+index 2dc7212d6f..c58c46f36b 100644
+--- a/keyboard.xml
++++ b/keyboard.xml
+@@ -140,7 +140,8 @@ top down before the key bindings are parsed.
+   </mod-ctrl>
+  </key>
+ 
+- <key n="13"> <!-- PLIB -->
++ <!--
++ <key n="13">
+   <name>Enter</name>
+   <desc>Move rudder right</desc>
+   <repeatable type="bool">true</repeatable>
+@@ -150,6 +151,37 @@ top down before the key bindings are parsed.
+    <step type="double">0.05</step>
+   </binding>
+  </key>
++ -->
++
++ <key n="13">
++   <name>Enter</name>
++   <desc>Toggle map dialog</desc>
++   <repeatable type="bool">false</repeatable>
++   <binding>
++     <condition>
++      <not>
++       <property>/gui/map/isopen</property>
++      </not>
++     </condition>
++     <command>dialog-show</command>
++     <dialog-name>map</dialog-name>
++     <command>nasal</command>
++     <script>
++         setprop("/gui/map/isopen", 1);
++     </script>
++   </binding>
++   <binding>
++     <condition>
++      <property>/gui/map/isopen</property>
++     </condition>
++     <command>dialog-close</command>
++     <dialog-name>map</dialog-name>
++     <command>nasal</command>
++     <script>
++         setprop("/gui/map/isopen", 0);
++     </script>
++   </binding>
++ </key>
+ 
+  <key n="14">
+   <name>Ctrl-N</name>
+@@ -385,12 +417,26 @@ top down before the key bindings are parsed.
+ 
+  <key n="43">
+   <name>+</name>
++  <desc>Map zoom in</desc>
++  <repeatable type="bool">false</repeatable>
++    <binding>
++        <command>property-adjust</command>
++        <property>/gui/map/zoom</property>
++        <step>1</step>
++        <max>12</max>
++    </binding>
++ </key>
++
++<!--
++ <key n="43">
++  <name>+</name>
+   <desc>Let ATC/instructor repeat last message</desc>
+   <binding>
+     <command>nasal</command>
+     <script>screen.msg_repeat()</script>
+   </binding>
+  </key>
++-->
+ 
+  <key n="44">
+   <name>,</name>
+@@ -409,6 +455,19 @@ top down before the key bindings are parsed.
+ 
+  <key n="45">
+   <name>-</name>
++  <desc>Map zoom out</desc>
++  <repeatable type="bool">false</repeatable>
++    <binding>
++        <command>property-adjust</command>
++        <property>/gui/map/zoom</property>
++        <step>-1</step>
++        <min>0</min>
++    </binding>
++ </key>
++
++<!--
++ <key n="45">
++  <name>-</name>
+   <repeatable type="bool">false</repeatable>
+   <desc>Chat Menu</desc>
+   <binding>
+@@ -416,6 +475,7 @@ top down before the key bindings are parsed.
+      <dialog-name>chat-menu</dialog-name>
+   </binding>
+  </key>
++ -->
+ 
+  <key n="46">
+   <name>.</name>
+@@ -432,6 +492,72 @@ top down before the key bindings are parsed.
+   </mod-up>
+  </key>
+ 
++ <key n="48">
++  <name>0</name>
++  <desc>Toggle parking brake</desc>
++  <binding>
++   <command>nasal</command>
++   <script>controls.applyParkingBrake(1)</script>
++  </binding>
++  <mod-up>
++   <binding>
++    <command>nasal</command>
++    <script>controls.applyParkingBrake(0)</script>
++   </binding>
++  </mod-up>
++ </key>
++
++ <key n="49">
++  <name>1</name>
++  <desc>Toggle landing lights</desc>
++  <repeatable type="bool">false</repeatable>
++  <binding>
++    <command>property-toggle</command>
++    <property>/controls/lighting/landing-lights</property>
++  </binding>
++ </key>
++
++ <key n="50">
++  <name>2</name>
++  <desc>Toggle taxi lights</desc>
++  <repeatable type="bool">false</repeatable>
++  <binding>
++    <command>property-toggle</command>
++    <property>/controls/lighting/taxi-light</property>
++  </binding>
++ </key>
++
++ <key n="51">
++  <name>3</name>
++  <desc>Toggle nav lights</desc>
++  <repeatable type="bool">false</repeatable>
++  <binding>
++    <command>property-toggle</command>
++    <property>/controls/lighting/nav-lights</property>
++  </binding>
++ </key>
++
++ <key n="52">
++  <name>4</name>
++  <desc>Toggle beacon</desc>
++  <repeatable type="bool">false</repeatable>
++  <binding>
++    <command>property-toggle</command>
++    <property>/controls/lighting/beacon</property>
++  </binding>
++ </key>
++
++ <key n="53">
++  <name>5</name>
++  <desc>Toggle strobe</desc>
++  <repeatable type="bool">false</repeatable>
++  <binding>
++    <command>property-toggle</command>
++    <property>/controls/lighting/strobe</property>
++  </binding>
++ </key>
++
++ <!--
+  <key n="47">
+   <name>/</name>
+   <desc>Open property browser</desc>
+@@ -630,6 +756,7 @@ top down before the key bindings are parsed.
+    </binding>
+   </mod-shift>
+  </key>
++-->
+ 
+  <key n="58">
+   <name>:</name>
+@@ -875,6 +1002,16 @@ top down before the key bindings are parsed.
+   </binding>
+  </key>
+ 
++ <key n="96">
++  <name>`</name>
++  <repeatable type="bool">false</repeatable>
++  <desc>Chat Menu</desc>
++  <binding>
++     <command>dialog-show</command>
++     <dialog-name>chat-menu</dialog-name>
++  </binding>
++ </key>
++
+  <key n="97">
+   <name>a</name>
+   <desc>Increase speed-up</desc>
