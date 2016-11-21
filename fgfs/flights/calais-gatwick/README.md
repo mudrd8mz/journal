@@ -26,7 +26,7 @@ use. Charts can be found in the
 I knew I would be coming from east so I picked TIMBA as the [initial approach
 fix](http://en.wikipedia.org/wiki/Initial_approach_fix). The next step was to
 plan arriving to TIMBA. This is when
-[STAR](http://en.wikipedia.org/wiki/Standard_Terminal_Arrival_Route_(STAR\))
+[STAR](http://en.wikipedia.org/wiki/Standard_Terminal_Arrival_Route_(STAR))
 charts become useful. I printed out "STAR VIA TIMBA (NORTH AND EAST)"
 and picked the TIMBA TWO FOXTROT (TIMBA 2F) arrival route. So I realized I need
 to get to the LYD VOR/DME station.
