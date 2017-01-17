@@ -1,0 +1,14 @@
+# Continuously save the current window's screenshot
+
+    $ i=0; while true ; do let i++ ; xfce4-screenshooter -w -o cat > ~/tmp/w$(printf "%03d" $i).png sleep 0.1 ; done
+
+# Remove the last one as it will likely be invalid.
+# Use ImageMagick to convert the screenshots into an animated gifs.
+
+    $ convert w*.png w.gif
+
+# Optimize (make significantly smaller)
+
+    $ convert w.gif -fuzz 10% -layers Optimize w.gif
+
+# Open and resave in Gimp, where you can modify timing between frames
