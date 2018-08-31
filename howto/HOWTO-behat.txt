@@ -18,4 +18,20 @@ Running Moodle Behat tests with Chrome
         ]
     ];
 
-3. Use `mdk behat` as needed.
+    $CFG->behat_parallel_run = [
+        ['wd_host' => 'http://127.0.0.1:4444/wd/hub'],
+        ['wd_host' => 'http://127.0.0.1:4445/wd/hub'],
+        ['wd_host' => 'http://127.0.0.1:4446/wd/hub'],
+    ];
+
+3. Initialise Behat for parallel runs and all themes
+
+    $ php admin/tool/behat/cli/init.php --parallel=3 -a
+
+4. Run particular tests, all themes:
+
+    $ php admin/tool/behat/cli/run.php --tags="@mod_workshop"
+
+   or just one theme:
+
+    $ php admin/tool/behat/cli/run.php --tags="@mod_workshop" --suite="clean"
