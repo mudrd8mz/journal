@@ -1,2 +1,7 @@
+Prepare multipage PDF from scanned images:
 
     $ convert a.png b.png -compress jpeg -resize 1240x1753 -extent 1240x1753 -gravity center -units PixelsPerInch -density 150x150 multipage.pdf
+
+Merge multiple PDFs into a single one:
+
+    $ pdfunite in-1.pdf in-2.pdf in-n.pdf out.pdf
