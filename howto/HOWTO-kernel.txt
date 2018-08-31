@@ -26,5 +26,14 @@ $ make install
 $ cp /boot/vmlinuz-{the default one} /boot/efi/boot/bootx64.efi     # fallback via UEFI stub
 $ cd /boot
 $ make
+$ vi /var/lib/portage/world         # update the version not to be cleaned
 
-Check /etc/portage/package.accept_keywords for sys-firmware/iwl7260-ucode version.
+Check /etc/portage/package.accept_keywords for sys-firmware/iwl7260-ucode
+version. Check
+
+  https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi#d_3165_and_3168_support
+
+to see which ucode is the latest for the 7260 wireless. It will be -17.ucode
+probably. Latest can be downloaded from
+
+  https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
