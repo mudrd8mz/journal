@@ -28,7 +28,11 @@ Running Moodle Behat tests with Chrome
 
     $ php admin/tool/behat/cli/init.php --parallel=3 -a
 
-4. Run particular tests, all themes:
+4. Run selenium instances
+
+    $ printf %d\\n {4444..4446} | xargs -n 1 -P 3 java -jar ~/.moodle-sdk/selenium.jar -port
+
+5. Run particular tests, all themes:
 
     $ php admin/tool/behat/cli/run.php --tags="@mod_workshop"
 
