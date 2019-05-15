@@ -19,7 +19,7 @@ $ make oldconfig
 $ make prepare
 $ make modules_prepare
 $ emerge -av @module-rebuild
-$ make -j5
+$ make -j9
 $ make modules_install
 $ mount /boot
 $ make install

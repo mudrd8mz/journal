@@ -1,0 +1,20 @@
+## Dwarf Fortress ##
+
+* games-roguelike/dwarf-fortress - from standard gentoo repository
+
+## Dwarf Therapist ##
+
+* games-util/dwarf-therapist - from anders-larsson overlay
+
+Version compatibility controlled by /etc/portage/package.accept_keywords
+
+https://github.com/Dwarf-Therapist/Dwarf-Therapist/releases
+
+## DFHack ##
+
+Download a release from https://github.com/DFHack/dfhack/releases matching the
+DF version, architecture and GCC version.
+
+Extract and move the files into ~/.dwarf-fortress
+
+Run ./dfhack there.

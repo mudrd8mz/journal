@@ -1,0 +1,5 @@
+Redistribute adhoc tasks in time.
+
+    mysql> SET @pos := 0;
+    mysql> UPDATE task_adhoc SET nextruntime = (SELECT @pos := @pos + 1) * 600 + UNIX_TIMESTAMP() WHERE classname LIKE '%initiate_data_request_task';
+

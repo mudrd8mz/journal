@@ -1,3 +1,8 @@
 Scaling the number of pods
 
-   # kubectl --context=production scale --replicas=4 deployment/learn-moodle-net
+    # kubectl --context=production scale --replicas=4 deployment/learn-moodle-net
+
+Restarting PHP and Nginx from withing the pod
+
+    # supervisorctl restart php-fpm
+    # supervisorctl restart nginx

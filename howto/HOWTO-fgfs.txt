@@ -1,0 +1,10 @@
+cd ~/git/simgear
+git checkout 2016.4
+cd ~/build/simgear-2016.4
+cmake -j9 ~/git/simgear/ -DCMAKE_INSTALL_PREFIX=/usr/local && make && sudo make install
+
+cd ~/git/flightgear
+git checkout 2016.4
+cd ~/build/flightgear-2016.4
+#cmake -j9 ~/git/flightgear/ -DCMAKE_INSTALL_PREFIX=/usr/local -DENABLE_FGADMIN=OFF && make && sudo make install
+cmake -j9 ~/git/flightgear/ -DCMAKE_INSTALL_PREFIX=/usr/local && make && sudo make install
