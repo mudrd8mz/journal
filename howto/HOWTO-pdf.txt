@@ -5,3 +5,12 @@ Prepare multipage PDF from scanned images:
 Merge multiple PDFs into a single one:
 
     $ pdfunite in-1.pdf in-2.pdf in-n.pdf out.pdf
+
+Convert PDF to PNG (all pages):
+
+    $ convert -density 150 input.pdf -quality 90 output.png
+
+Convert PDF to PNG (single page e.g. no.43):
+
+    $ convert -density 150 input.pdf[42] -quality 90 output.png
+
