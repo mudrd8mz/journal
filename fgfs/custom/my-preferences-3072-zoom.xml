@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<PropertyList>
+    <sim>
+        <view n="0">
+            <config>
+                <pitch-offset-deg>-15.0</pitch-offset-deg>
+            </config>
+        </view>
+
+        <rendering>
+            <camera-group>
+                <window>
+                    <name type="string">wide</name>
+                    <host-name type="string"></host-name>
+                    <!-- -->
+                    <width>3072</width>
+                    <height>768</height>
+                    <decoration type="bool">false</decoration>
+                    <!-- -->
+                    <!--
+                    <fullscreen type="bool">true</fullscreen>
+                    <overrideRedirect type="bool">true</overrideRedirect>
+                    -->
+                </window>
+
+                <camera>
+                    <name type="string">CenterCamera</name>
+                    <window>
+                        <name>wide</name>
+                    </window>
+                    <viewport>
+                        <x>1024</x>
+                        <y>0</y>
+                        <width>1024</width>
+                        <height>768</height>
+                    </viewport>
+                    <view>
+                        <heading-deg type="double">0.0</heading-deg>
+                        <roll-deg type="double">0.0</roll-deg>
+                        <pitch-deg type="double">0.0</pitch-deg>
+                    </view>
+                    <physical-dimensions>
+                        <width>340</width>
+                        <height>272</height>
+                        <bezel>
+                            <right>14.5</right>
+                            <left>14.5</left>
+                            <top>0</top>
+                            <bottom>0</bottom>
+                        </bezel>
+                    </physical-dimensions>
+                    <!-- Cheating, the real distance is about 800mm. But then the screen does not show what is needed to fly. By shortening this pictures get bigger but the view also gets ess realistic. -->
+                    <master-perspective>
+                        <eye-distance>600</eye-distance>
+                        <x-offset>0</x-offset>
+                        <y-offset>0</y-offset>
+                    </master-perspective>
+                </camera>
+
+                <camera>
+                    <name type="string">RightCamera</name>
+                    <window>
+                        <name>wide</name>
+                    </window>
+                    <viewport>
+                        <x>2048</x>
+                        <y>0</y>
+                        <width>1024</width>
+                        <height>768</height>
+                    </viewport>
+                    <view>
+                        <heading-deg type="double">0</heading-deg>
+                        <roll-deg type="double">0</roll-deg>
+                        <pitch-deg type="double">0</pitch-deg>
+                    </view>
+                    <physical-dimensions>
+                        <width>340</width>
+                        <height>272</height>
+                        <bezel>
+                            <right>14.5</right>
+                            <left>14.5</left>
+                            <top>0</top>
+                            <bottom>0</bottom>
+                        </bezel>
+                    </physical-dimensions>
+                    <right-of-perspective>
+                        <parent-camera type="string">CenterCamera</parent-camera>
+                    </right-of-perspective>
+                </camera>
+
+                <camera>
+                    <name type="string">LeftCamera</name>
+                    <window>
+                        <name>wide</name>
+                    </window>
+                    <viewport>
+                        <x>0</x>
+                        <y>0</y>
+                        <width>1024</width>
+                        <height>768</height>
+                    </viewport>
+                    <view>
+                        <heading-deg type="double">0</heading-deg>
+                        <roll-deg type="double">0</roll-deg>
+                        <pitch-deg type="double">0</pitch-deg>
+                    </view>
+                    <physical-dimensions>
+                        <width>340</width>
+                        <height>272</height>
+                        <bezel>
+                            <right>14.5</right>
+                            <left>14.5</left>
+                            <top>0</top>
+                            <bottom>0</bottom>
+                        </bezel>
+                    </physical-dimensions>
+                    <left-of-perspective>
+                        <parent-camera type="string">CenterCamera</parent-camera>
+                    </left-of-perspective>
+                </camera>
+
+                <gui>
+                    <window>
+                        <name type="string">wide</name>
+                    </window>
+                </gui>
+            </camera-group>
+        </rendering>
+    </sim>
+</PropertyList>
