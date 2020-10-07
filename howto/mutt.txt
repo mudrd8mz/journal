@@ -1,0 +1,6 @@
+Tag all messages from the Moodle tracker, but not direct mentions:
+
+    shift-T
+    ~f @tracker.moodle.org !(~s mentioned)
+    ;d
+

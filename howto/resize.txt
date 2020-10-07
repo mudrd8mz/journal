@@ -1,0 +1,3 @@
+Batch resize all *.jpg files so that they fit 800 px width
+
+    # for f in *.jpg ; do convert $f -resize 800 $f; done

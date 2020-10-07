@@ -1,28 +1,28 @@
 Here are the steps
 
-    Use xrandr to make sure that the new mode can fit within the maximum framebuffer size
-    Code:
+Use xrandr to make sure that the new mode can fit within the maximum framebuffer size
 
     xrandr | grep maximum
 
-    Use gtf to create a mode line (or cvt)
-    Code:
+Use gtf to create a mode line (or cvt)
 
     gtf 1440 900 59.9
 
-    Add new mode using xrandr
-    Code:
+Add new mode using xrandr
 
     xrandr --newmode "1440x900_59.90"  106.29  1440 1520 1672 1904  900 901 904 932  -HSync +Vsync
 
-    Add this newly added mode to the desired output (VGA/LVDS etc)
-    Code:
+Add this newly added mode to the desired output (VGA/LVDS etc)
 
     xrandr --addmode VGA 1440x900_59.90
 
-    Choose the new mode
-    Code:
+Choose the new mode
 
     xrandr --output VGA --mode 1440x900_59.90
 
+TripleHead2Go setup (with nvidia/modesetting):
 
+    xrandr --newmode "3072x768" 195.0 3072 3144 3384 4032 768 771 780 806 +Hsync +VSync
+    xrandr --addmode HDMI-1-1 "3072x768"
+    xrandr --output HDMI-1-1 --mode 3072x768
+    xrandr --output HDMI-1-1 --above eDP-1-1

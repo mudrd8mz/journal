@@ -26,7 +26,7 @@ Running Moodle Behat tests with Chrome
 
 3. Initialise Behat for parallel runs and all themes
 
-    $ php admin/tool/behat/cli/init.php --parallel=3 -a
+    $ php admin/tool/behat/cli/init.php --parallel=3 --add-core-features-to-theme="mytheme"
 
 4. Run selenium instances
 

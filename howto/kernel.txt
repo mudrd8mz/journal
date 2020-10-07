@@ -15,7 +15,7 @@ Compiling a new kernel
 ======================
 
 $ eselect kernel
-$ make oldconfig
+$ make olddefconfig (use defaults) / make syncconfig (interactive)
 $ make prepare
 $ make modules_prepare
 $ emerge -av @module-rebuild

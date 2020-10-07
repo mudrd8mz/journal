@@ -14,3 +14,10 @@ Convert PDF to PNG (single page e.g. no.43):
 
     $ convert -density 150 input.pdf[42] -quality 90 output.png
 
+Print PDF, 2 pages per sheet, both sides
+
+    $ lp -o number-up=2 -o sides=two-sided-short-edge file.pdf
+
+Split a postscript image to print it on multiple A4 pages
+
+    $ poster -v -mA4 -s1 input.eps > output.eps

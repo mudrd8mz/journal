@@ -1,3 +1,7 @@
+Regular update:
+
+    # emerge -DuNaU --with-bdeps=y --keep-going @world
+
 Human friendly timestamp formatting:
 
     # tail -f /var/log/emerge.log | awk -F: '{print strftime("%Y-%m-%d %X %Z", $1),$2}'

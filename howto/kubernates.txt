@@ -1,8 +1,24 @@
 Scaling the number of pods
 
-    # kubectl --context=production scale --replicas=4 deployment/learn-moodle-net
+    # kubectl --context=production scale --replicas=3 deployment/moodle-org
 
 Restarting PHP and Nginx from withing the pod
 
     # supervisorctl restart php-fpm
     # supervisorctl restart nginx
+
+Stop supervisorctl job
+
+    # supervisorctl stop cron
+
+See log
+
+    # kubectl --context=production logs --tail=100 moodle-org-cron-1234567890-abcdef |awk '{gsub(/\\n/,RS)}1' | less
+
+Pods list by app label.
+
+    # kubectl --context=production get pods -o=jsonpath='{range .items[*]}{.metadata.labels.app}{"\t"}{.metadata.name}{"\n"}{end}'
+
+Apply the deployment file.
+
+    # kubectl --context=production apply -f 01_deployment.json

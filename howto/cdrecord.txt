@@ -3,8 +3,16 @@ Data CD/DVD
 
 http://wiki.gentoo.org/wiki/CD/DVD/BD_Writing
 
+Burning ISO image
+=================
+
 # cdrecord -scanbus
 # cdrecord dev=2,0,0 -v -eject -dao driveropts=burnfree test.iso
+
+Burning files
+=============
+
+Read mkisofs man page to create an ISO image and burn it then.
 
 Burning MP3 to audio CD
 =======================
