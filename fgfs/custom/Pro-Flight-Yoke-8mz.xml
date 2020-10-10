@@ -122,6 +122,11 @@
             <command>nasal</command>
             <script>
                 view.resetViewDir();
+                if (mode.getIntValue() == 1) {
+                    setprop("/sim/current-view/goal-pitch-offset-deg", -9);
+                } elsif(mode.getIntValue() == 2) {
+                    setprop("/sim/current-view/goal-pitch-offset-deg", -22);
+                }
                 <!--view.resetFOV();-->
                 <!--view.resetViewPos();-->
             </script>
@@ -134,7 +139,7 @@
             <property>/controls/gear/brake-parking</property>
         </binding>
     </button> -->
-    <button n="1"> <!-- Labled as D -->
+    <button n="1"> <!-- Labled as D
         <name>Red button</name>
         <desc>Fire GAU-8/A cannon</desc>
         <binding>
@@ -146,8 +151,8 @@
                 <command>nasal</command>
                 <script>A10weapons.cfire_gau8a()</script>
             </binding>
-        </mod-up>
-<!--
+        </mod-up> -->
+
         <name>Red button</name>
         <desc>Push To Talk (FGCom)</desc>
         <binding>
@@ -160,7 +165,7 @@
                 <script>controls.ptt(0)</script>
             </binding>
         </mod-up>
--->
+
     </button>
     <button n="2"> <!-- Labled as A1 -->
         <desc>Zoom In</desc>
@@ -181,36 +186,84 @@
         </binding>
     </button>
     <button n="4"> <!-- Labled as B1 -->
-        <desc>Elevator trim down</desc>
+        <desc>Heading course up</desc>
         <repeatable>true</repeatable>
         <binding>
+            <command>property-adjust</command>
+            <property>/instrumentation/kcs55/ki525/selected-course-deg</property>
+            <step type="double">-1.0</step>
+            <min>000</min>
+            <max>360</max>
+            <wrap>true</wrap> <!-- when we hit 361, wrap back to 0 and vice-versa -->
+        </binding>
+        <binding>
             <command>nasal</command>
-            <script>controls.elevatorTrim(0.75)</script>
+            <script>gui.popupTip(sprintf("Course: %3d", getprop("/instrumentation/kcs55/ki525/selected-course-deg")));</script>
         </binding>
     </button>
     <button n="5"> <!-- LAbled as B2 -->
-        <desc>Elevator trim up</desc>
+        <desc>Heading course down</desc>
         <repeatable>true</repeatable>
         <binding>
+            <command>property-adjust</command>
+            <property>/instrumentation/kcs55/ki525/selected-course-deg</property>
+            <step type="double">1.0</step>
+            <min>000</min>
+            <max>360</max>
+            <wrap>true</wrap> <!-- when we hit 361, wrap back to 0 and vice-versa -->
+        </binding>
+        <binding>
             <command>nasal</command>
-            <script>controls.elevatorTrim(-0.75)</script>
+            <script>gui.popupTip(sprintf("Course: %3d", getprop("/instrumentation/kcs55/ki525/selected-course-deg")));</script>
         </binding>
     </button>
     <button n="6"> <!-- Labled as C1 -->
+        <desc>Heading bug left</desc>
+        <repeatable>true</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>/instrumentation/kcs55/ki525/selected-heading-deg</property>
+            <step type="double">-1.0</step>
+            <min>000</min>
+            <max>360</max>
+            <wrap>true</wrap> <!-- when we hit 361, wrap back to 0 and vice-versa -->
+        </binding>
+        <binding>
+            <command>nasal</command>
+            <script>gui.popupTip(sprintf("Hdg Bug: %3d", getprop("/instrumentation/kcs55/ki525/selected-heading-deg")));</script>
+        </binding>
+        <!--
         <desc>Aileron trim left</desc>
         <repeatable>true</repeatable>
         <binding>
             <command>nasal</command>
             <script>controls.aileronTrim(-0.75)</script>
         </binding>
+        -->
     </button>
     <button n="7"> <!-- Labled as C2 -->
+        <desc>Heading bug right</desc>
+        <repeatable>true</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>/instrumentation/kcs55/ki525/selected-heading-deg</property>
+            <step type="double">1.0</step>
+            <min>000</min>
+            <max>360</max>
+            <wrap>true</wrap> <!-- when we hit 361, wrap back to 0 and vice-versa -->
+        </binding>
+        <binding>
+            <command>nasal</command>
+            <script>gui.popupTip(sprintf("Hdg Bug: %3d", getprop("/instrumentation/kcs55/ki525/selected-heading-deg")));</script>
+        </binding>
+        <!--
         <desc>Aileron trim right</desc>
         <repeatable>true</repeatable>
         <binding>
             <command>nasal</command>
             <script>controls.aileronTrim(0.75)</script>
         </binding>
+        -->
     </button>
     <!-- Mode Switch -->
     <button n="8">
@@ -219,7 +272,8 @@
             <command>nasal</command>
             <script>
                 setprop("/sim/current-view/view-number", 0);
-                setprop("/sim/current-view/field-of-view", 90);
+                setprop("/sim/current-view/field-of-view", 82.5);
+                setprop("/sim/current-view/goal-pitch-offset-deg", -9);
                 mode.setIntValue(1);
                 gui.popupTip("Mode 1");
             </script>
@@ -231,7 +285,8 @@
             <command>nasal</command>
             <script>
                 setprop("/sim/current-view/view-number", 0);
-                setprop("/sim/current-view/field-of-view", 60);
+                setprop("/sim/current-view/field-of-view", 48);
+                setprop("/sim/current-view/goal-pitch-offset-deg", -22);
                 mode.setIntValue(2);
                 gui.popupTip("Mode 2");
             </script>
@@ -243,6 +298,7 @@
             <command>nasal</command>
             <script>
                 setprop("/sim/current-view/view-number", 2);
+                setprop("/sim/current-view/field-of-view", 80);
                 mode.setIntValue(3);
                 gui.popupTip("Mode 3");
             </script>
