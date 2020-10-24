@@ -123,7 +123,7 @@
             <script>
                 view.resetViewDir();
                 if (mode.getIntValue() == 1) {
-                    setprop("/sim/current-view/goal-pitch-offset-deg", -9);
+                    setprop("/sim/current-view/goal-pitch-offset-deg", -11);
                 } elsif(mode.getIntValue() == 2) {
                     setprop("/sim/current-view/goal-pitch-offset-deg", -22);
                 }
@@ -273,7 +273,7 @@
             <script>
                 setprop("/sim/current-view/view-number", 0);
                 setprop("/sim/current-view/field-of-view", 82.5);
-                setprop("/sim/current-view/goal-pitch-offset-deg", -9);
+                setprop("/sim/current-view/goal-pitch-offset-deg", -11);
                 mode.setIntValue(1);
                 gui.popupTip("Mode 1");
             </script>
