@@ -1,0 +1,11 @@
+Search & replace in some files in the tree:
+
+    find . -name '*.php' -print0 | xargs -0 sed -i 's|oldstring|newstring|g'
+
+Search for a substring in certain code areas only such as JS source files here.
+
+    find . -path '*/amd/src/**.js' -print0 | xargs -0 grep 'core/config'
+
+Run a command in all found directories:
+
+    find * -type d -name .git -execdir git reset --hard HEAD \;
