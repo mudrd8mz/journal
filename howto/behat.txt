@@ -24,7 +24,11 @@ Running Moodle Behat tests with Chrome
         ['wd_host' => 'http://127.0.0.1:4446/wd/hub'],
     ];
 
-3. Initialise Behat for parallel runs and all themes
+3. Initialise Behat for parallel runs
+
+    $ php admin/tool/behat/cli/init.php --parallel=3
+
+   If custom theme is to be tested
 
     $ php admin/tool/behat/cli/init.php --parallel=3 --add-core-features-to-theme="mytheme"
 
@@ -39,3 +43,7 @@ Running Moodle Behat tests with Chrome
    or just one theme:
 
     $ php admin/tool/behat/cli/run.php --tags="@mod_workshop" --suite="clean"
+
+   specific feature file:
+
+    $ php admin/tool/behat/cli/run.php  repository/tests/behat/create_shortcut.feature
