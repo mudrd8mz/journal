@@ -22,3 +22,7 @@ Pods list by app label.
 Apply the deployment file.
 
     # kubectl --context=production apply -f 01_deployment.json
+
+Restart rollout and monitor progress
+
+    #  kubectl --context=production rollout restart deployment/moodle-org ; kubectl --context=production rollout status deployment/moodle-org
