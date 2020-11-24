@@ -47,3 +47,7 @@ Running Moodle Behat tests with Chrome
    specific feature file:
 
     $ php admin/tool/behat/cli/run.php  repository/tests/behat/create_shortcut.feature
+
+6. Alternative run
+
+    $ vendor/bin/behat --config /path/to/behat.yml --format=pretty --out=pretty.txt --format=moodle_progress --out=std --format=moodle_screenshot --format-settings '{"formats": "html,image"}' --out=/home/mudrd8mz/tmp/ --stop-on-failure --tags="@wip"
