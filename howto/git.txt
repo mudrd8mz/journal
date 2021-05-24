@@ -1,0 +1,3 @@
+All changes on Moodle language files since certain date:
+
+    # git log --since="12 November 2020" --topo-order --no-merges  -p -- '**/lang/en/*' ':(exclude)install/'

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+  <sim>
+    <model>
+      <livery>
+        <name type="string">OK-DAV</name>
+        <texture n="0" type="string">Liveries/OK-DAV/texture0.png</texture>
+        <texture n="1" type="string">Liveries/OK-DAV/texture1.png</texture>
+        <texture n="2" type="string">Liveries/OK-DAV/texture2.png</texture>
+      </livery>
+    </model>
+  </sim>
+</PropertyList>

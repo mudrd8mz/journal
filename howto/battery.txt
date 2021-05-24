@@ -1,0 +1,11 @@
+Display current charging limits
+
+    # /etc/init.d/tpacpi-bat info
+
+Full charge:
+
+    # /etc/init.d/tpacpi-bat high
+
+Reset to standard:
+
+    # /etc/init.d/tpacpi-bat low
