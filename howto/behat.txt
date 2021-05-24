@@ -1,28 +1,17 @@
-Running Moodle Behat tests with Chrome
-======================================
+Running Moodle Behat tests
+==========================
 
-1. Extract the Chrome driver (executable) into your $PATH
+1. Have chromedriver or geckodriver installed in your $PATH.
 
-2. Define new profile in config.php
-
-    $CFG->behat_profiles = [
-        'default' => [
-            'browser' => 'chrome',
-            'extensions' => [
-                'Behat\MinkExtension' => [
-                    'selenium2' => [
-                        'browser' => 'chrome',
-                    ]
-                ]
-            ]
-        ]
-    ];
+2. Add to your config.php just before the setup.php:
 
     $CFG->behat_parallel_run = [
         ['wd_host' => 'http://127.0.0.1:4444/wd/hub'],
         ['wd_host' => 'http://127.0.0.1:4445/wd/hub'],
         ['wd_host' => 'http://127.0.0.1:4446/wd/hub'],
     ];
+
+    require_once('/home/mudrd8mz/git/moodle-browser-config/init.php');
 
 3. Initialise Behat for parallel runs
 
@@ -38,16 +27,16 @@ Running Moodle Behat tests with Chrome
 
 5. Run particular tests, all themes:
 
-    $ php admin/tool/behat/cli/run.php --tags="@mod_workshop"
+    $ php admin/tool/behat/cli/run.php --profile=headlesschrome --tags="@mod_workshop"
 
    or just one theme:
 
-    $ php admin/tool/behat/cli/run.php --tags="@mod_workshop" --suite="clean"
+    $ php admin/tool/behat/cli/run.php --profile=headlesschrome --tags="@mod_workshop" --suite="clean"
 
    specific feature file:
 
-    $ php admin/tool/behat/cli/run.php  repository/tests/behat/create_shortcut.feature
+    $ php admin/tool/behat/cli/run.php --profile=headlesschrome repository/tests/behat/create_shortcut.feature
 
 6. Alternative run
 
-    $ vendor/bin/behat --config /path/to/behat.yml --format=pretty --out=pretty.txt --format=moodle_progress --out=std --format=moodle_screenshot --format-settings '{"formats": "html,image"}' --out=/home/mudrd8mz/tmp/ --stop-on-failure --tags="@wip"
+    $ vendor/bin/behat --config /path/to/behat.yml --format=pretty --out=pretty.txt --format=moodle_progress --out=std --format=moodle_screenshot --format-settings '{"formats": "html,image"}' --out=/home/mudrd8mz/tmp/ --stop-on-failure --profile=headlesschrome --tags="@wip"
